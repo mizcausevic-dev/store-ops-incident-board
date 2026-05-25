@@ -46,6 +46,9 @@ jobs:
             } > site/sitemap.xml
             echo "wrote site/robots.txt + site/sitemap.xml for $DOMAIN"
             node scripts/seo-meta.mjs "$DOMAIN"
+            mkdir -p site/api
+            printf '{"status":"ok","service":"%s","release":"v1.0-prod","generated":"%s"}\n' "$DOMAIN" "$TODAY" > site/api/health.json
+            echo "wrote site/api/health.json"
           else
             echo "no CNAME -> skipping SEO assets"
           fi
