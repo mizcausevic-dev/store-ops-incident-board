@@ -1,0 +1,45 @@
+{
+  "name": "store-ops-incident-board",
+  "version": "0.1.0",
+  "description": "TypeScript control plane for store incidents, SLA blockers, recovery posture, and buyer-safe restaurant operations.",
+  "main": "dist/src/app.js",
+  "scripts": {
+    "dev": "tsx watch src/app.ts",
+    "build": "tsc --pretty false",
+    "start": "node dist/src/app.js",
+    "prerender": "tsx scripts/prerender.ts",
+    "lint": "eslint .",
+    "typecheck": "tsc --pretty false --noEmit",
+    "test": "vitest run",
+    "coverage": "vitest run --coverage",
+    "demo": "tsx scripts/run_demo.ts",
+    "smoke": "tsx scripts/smoke_check.ts",
+    "verify": "npm run lint && npm run typecheck && npm run coverage && npm run build && npm run demo && npm run smoke",
+    "render:assets": "powershell -ExecutionPolicy Bypass -File .\\scripts\\render_readme_assets.ps1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mizcausevic-dev/store-ops-incident-board.git"
+  },
+  "license": "AGPL-3.0-or-later",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/mizcausevic-dev/store-ops-incident-board/issues"
+  },
+  "homepage": "https://github.com/mizcausevic-dev/store-ops-incident-board#readme",
+  "dependencies": {
+    "express": "^5.2.1"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.0.0",
+    "@types/express": "^5.0.6",
+    "@types/node": "^25.7.0",
+    "@vitest/coverage-v8": "^4.1.6",
+    "eslint": "^9.0.0",
+    "globals": "^15.0.0",
+    "tsx": "^4.21.0",
+    "typescript": "^6.0.3",
+    "typescript-eslint": "^8.0.0",
+    "vitest": "^4.1.7"
+  }
+}
